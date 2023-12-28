@@ -16,28 +16,38 @@
 <body>
     <div class="WeatherApp">
         <header>
-            <input type="search" placeholder="Enter a city " required>
-            <input type="submit" value="search">
+            <form class="search-form" id="search-form">
+                <input type="search" placeholder="Enter a city " required class="search-form-input">
+                <input type="submit" value="search" class="search-form-button">
+            </form>
         </header>
         <main>
-            <div>
+            <div class="Weather-app-info">
+                <div>
 
-                <h1> Juba City </h1>
-                <p>
-                    Thursday 14:28, overcast clouds
-                    <br>
-                    Humidity: 83%, Wind: 6.69km/h
-                </p>
+                    <h1 class="Weather-app-city"> Juba City </h1>
+                    <p class="Weather-app-details">
+                        Thursday 14:28, overcast clouds
+                        <br>
+                        Humidity: <strong> 83% </strong>, Wind:<strong> 6.69km/h</strong>
+                    </p>
+                </div>
+                <div class="Weather-app-container">
+                    <div class="Weather-app-icon"> 🌤 </div>
+                    <div class="Weather-app-temperature">12</div>
+                    <div class="Weather-app-unit">°C</div>
+                </div>
             </div>
-            <div>🌤 12°C</div>
         </main>
 
-        <footer> <a href="https://github.com/dashboard" target="_blank"> by MSS NAOMI</a> , Code hosted on
-            <a href="https://github.com/Trophie132/myweatherapplication" target="_blank"> GITHUB</a> , Website hosted on
+        <footer> This project was built <a href="https://github.com/dashboard" target="_blank"> by Mss Naomi Storrs </a>
+            ,is
+            <a href="https://github.com/Trophie132/myweatherapplication" target="_blank"> Opened sourced on Github</a>
+            and Website hosted on
             <a href=" https://trophie132.github.io/myweatherapplication/ " target="_blank"> Github Pages</a>
         </footer>
 
-    </div>
+
 
 </body>
 
