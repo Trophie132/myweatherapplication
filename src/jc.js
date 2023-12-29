@@ -8,8 +8,11 @@ function displayweather(response) {
     let speedElement = document.querySelector("#speed");
     let timeElement = document.querySelector("#time");
     let date = new Date(response.data.time * 1000);
+    let iconElement = document.querySelector("#icon");
+
 
     console.log(response.data)
+
 
     timeElement.innerHTML = formatDate(date)
     speedElement.innerHTML = `${response.data.wind.speed} km/h`;
@@ -17,6 +20,8 @@ function displayweather(response) {
     descriptionElement.innerHTML = response.data.condition.description;
     temperatureElement.innerHTML = Math.round(temp);
     cityElement.innerHTML = response.data.city;
+    iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
 }
 function formatDate(date) {
 
