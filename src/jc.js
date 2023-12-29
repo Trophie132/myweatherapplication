@@ -2,12 +2,42 @@
 function displayweather(response) {
     let temperatureElement = document.querySelector("#temp");
     let temp = response.data.temperature.current;
-    temperatureElement.innerHTML = Math.round(temp);
     let cityElement = document.querySelector("#city");
+    let descriptionElement = document.querySelector("#description");
+    let humidityElement = document.querySelector("#humidity");
+    let speedElement = document.querySelector("#speed");
+    let timeElement = document.querySelector("#time");
+    let date = new Date(response.data.time * 1000);
+
+    console.log(response.data)
+
+    timeElement.innerHTML = formatDate(date)
+    speedElement.innerHTML = `${response.data.wind.speed} km/h`;
+    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+    descriptionElement.innerHTML = response.data.condition.description;
+    temperatureElement.innerHTML = Math.round(temp);
     cityElement.innerHTML = response.data.city;
+}
+function formatDate(date) {
 
+    let mimutes = date.getMinutes();
+    let hours = date.getHours();
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    let day = days[date.getDay()];
 
+    return `${day} ${hours}:${mimutes}`;
 
+    if (mimutes < 10) {
+        mimutes = `0 ${minutes}`;
+    }
 }
 
 
@@ -30,4 +60,4 @@ function showsearchform(event) {
 let searchformElement = document.querySelector("#search-form");
 searchformElement.addEventListener("submit", showsearchform);
 
-citysearch(Paris)
+citysearch("Nairobi");
