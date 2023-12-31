@@ -1,6 +1,7 @@
 body {
     background-color: #f9f7fe;
     font-family: 'Open Sans', sans-serif;
+
 }
 
 a {
@@ -88,6 +89,42 @@ header {
     margin-left: 5px;
     border-radius: 6px;
     color: rgb(223, 207, 223);
+}
+
+
+
+.weather-forecast-temperatures {
+    display: flex;
+    margin-top: 28px;
+    color: #000;
+
+}
+
+.weather-forecast-date {
+
+    opacity: 0.5;
+    text-align: center;
+    color: rgba(39, 33, 66, 0.4);
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.Weather-forecast-icon {
+    font-size: 15px;
+    text-align: center;
+}
+
+.weather-forecast-temperatures-max {
+
+    font-size: 18px;
+
+
+}
+
+.weather-forecast-temperatures-min {
+    font-size: 18px;
+    opacity: 0.5;
 }
 
 footer {
