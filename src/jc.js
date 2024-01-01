@@ -22,6 +22,9 @@ function displayweather(response) {
     cityElement.innerHTML = response.data.city;
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 
+    getForecast(response.data.city);
+
+
 }
 function formatDate(date) {
 
@@ -51,6 +54,7 @@ function citysearch(city) {
     let apiKey = "aao06f2277a94dbe2tdbecb5feb42d83 ";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then(displayweather);
+    console.log(apiKey);
 
 
 }
@@ -62,7 +66,18 @@ function showsearchform(event) {
     citysearch(searchinput.value);
 }
 
-function displayforecast() {
+function getForecast(city) {
+    let apiKey = "aao06f2277a94dbe2tdbecb5feb42d83";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayforecast);
+}
+
+
+
+
+function displayforecast(response) {
+    console.log(response.data);
+
 
     let days =
         ["Mon", "Tue", "Wed", " thur", "Fri"];
@@ -86,4 +101,5 @@ let searchformElement = document.querySelector("#search-form");
 searchformElement.addEventListener("submit", showsearchform);
 
 citysearch("Nairobi");
-displayforecast();
+getForecast("Nairobi");
+
